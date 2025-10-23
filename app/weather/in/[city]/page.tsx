@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
-  const title = `${cityData.name} Weather Today | Live Temperature & 7-Day Forecast`
-  const description = `Get live weather for ${cityData.name}, ${cityData.state}. Current temperature, humidity, wind speed, air quality, and 7-day forecast. Updated every 15 minutes.`
-  const keywords = `${cityData.name} weather, ${cityData.name} temperature, ${cityData.name} forecast, weather in ${cityData.name}, ${cityData.name} today weather`
+  const title = `${cityData.name} Weather Today | Live Temperature, Forecast & Air Quality`
+  const description = `Get live weather for ${cityData.name}, ${cityData.state}. Current temperature, humidity, wind speed, air quality index, and accurate 7-day weather forecast. Updated every 15 minutes. Free weather app.`
+  const keywords = `${cityData.name} weather, ${cityData.name} weather today, ${cityData.name} temperature, weather in ${cityData.name}, ${cityData.name} forecast, ${cityData.name} weather forecast, ${cityData.name} air quality, ${cityData.name} humidity, ${cityData.name} wind speed, today weather ${cityData.name}`
 
   return {
     title,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `/api/og?city=${cityData.name}`,
           width: 1200,
           height: 630,
-          alt: `${cityData.name} Weather`,
+          alt: `${cityData.name} Weather Forecast`,
         },
       ],
     },

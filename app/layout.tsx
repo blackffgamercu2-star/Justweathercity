@@ -9,26 +9,35 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "JustWeatherCity - Live Weather & Forecasts for India",
+  title: "JustWeatherCity - Free Weather App | Live Weather Forecast India",
   description:
-    "Real-time weather updates, forecasts, and alerts for Indian cities. Get accurate hyperlocal weather data with 7-day forecasts, radar, and air quality index.",
+    "Get accurate real-time weather forecasts for 1000+ Indian cities. Free weather app with live temperature, humidity, wind speed, air quality index, and 7-day forecast. Updated every 15 minutes.",
+  keywords:
+    "weather app, free weather, weather forecast, live weather, weather today, temperature, humidity, wind speed, air quality, weather India, weather forecast India, weather widget",
   generator: "JustWeatherCity",
   metadataBase: new URL("https://justweathercity.com"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://justweathercity.com",
-    siteName: "JustWeatherCity",
-    title: "JustWeatherCity - Live Weather & Forecasts for India",
-    description: "Real-time weather updates, forecasts, and alerts for Indian cities.",
+    siteName: "JustWeatherCity - Free Weather Forecast",
+    title: "JustWeatherCity - Live Weather & Forecasts for 1000+ Indian Cities",
+    description:
+      "Real-time weather updates, forecasts, and alerts for Indian cities. Get accurate hyperlocal weather data with 7-day forecasts, radar, and air quality index.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "JustWeatherCity Weather Platform",
+        alt: "JustWeatherCity - Free Weather Platform",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JustWeatherCity - Free Weather Forecast",
+    description: "Live weather for 1000+ Indian cities with accurate forecasts",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

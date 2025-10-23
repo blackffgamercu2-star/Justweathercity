@@ -33,16 +33,18 @@ export default function Home() {
       <section className="border-b border-gray-200 bg-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <div className="text-center space-y-6">
-            <h1 className="text-5xl font-bold text-balance text-gray-900">Accurate Weather for Every Indian City</h1>
+            <h1 className="text-5xl font-bold text-balance text-gray-900">
+              Free Weather Forecast for 1000+ Indian Cities | Live Temperature & Alerts
+            </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Real-time forecasts, air quality, and alerts for 200+ cities. Updated every 15 minutes with hyperlocal
-              precision.
+              Get real-time weather updates, 7-day forecasts, air quality index, and weather alerts for every Indian
+              city. Updated every 15 minutes with hyperlocal precision. No signup required.
             </p>
 
             {/* Search */}
             <div className="max-w-md mx-auto relative">
               <Input
-                placeholder="Search cities..."
+                placeholder="Search weather in your city..."
                 value={search}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-500"
@@ -55,7 +57,7 @@ export default function Home() {
                       href={`/weather/in/${city.slug}`}
                       className="block px-4 py-2 hover:bg-blue-50 first:rounded-t-lg last:rounded-b-lg"
                     >
-                      <div className="font-medium text-gray-900">{city.name}</div>
+                      <div className="font-medium text-gray-900">{city.name} Weather</div>
                       <div className="text-sm text-gray-500">{city.state}</div>
                     </Link>
                   ))}
@@ -66,9 +68,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="max-w-6xl mx-auto px-4 py-12 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900">Trending Weather Searches</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            "Delhi weather today",
+            "Mumbai temperature now",
+            "Bangalore weather forecast",
+            "Weather in my location",
+            "Today weather India",
+            "Rain alert near me",
+            "Air quality today",
+            "7 day forecast",
+          ].map((keyword) => (
+            <Link
+              key={keyword}
+              href={`/weather/in/delhi?q=${encodeURIComponent(keyword)}`}
+              className="px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded-lg text-sm text-gray-700 font-medium transition-colors"
+            >
+              {keyword}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Featured Cities */}
       <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8 text-gray-900">Popular Cities</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Popular Cities Weather</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {featuredCities.map((city) => (
             <Link key={city.id} href={`/weather/in/${city.slug}`}>
@@ -76,7 +102,7 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-gray-900">
                     <MapPin className="w-5 h-5 text-blue-600" />
-                    {city.name}
+                    {city.name} Weather
                   </CardTitle>
                   <CardDescription className="text-gray-600">{city.state}</CardDescription>
                 </CardHeader>

@@ -51,6 +51,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="Kn10tOYvW8yEXhqnZoSACfnWWHzCWh7dIs67GpMPNDU" />
+        <meta name="msvalidate.01" content="59D81615960C1B888C89F1E8E4DA3A8A" />
+
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="HHoBZvX8Wx3vdJabn3t0Ow" async />
+
         <link rel="canonical" href="https://justweathercity.com" />
         <meta name="theme-color" content="#ffffff" />
       </head>

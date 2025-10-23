@@ -11,6 +11,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: city.population > 5000000 ? 0.9 : city.population > 1000000 ? 0.8 : 0.7,
   }))
 
+  const widgetEntries = cities
+    .filter((city) => city.population > 1000000)
+    .map((city) => ({
+      url: `https://justweathercity.com/widget/${city.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "hourly" as const,
+      priority: 0.6,
+    }))
+
   const staticPages = [
     {
       url: "https://justweathercity.com",
@@ -38,5 +47,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  return [...staticPages, ...cityEntries]
+  return [...staticPages, ...cityEntries, ...widgetEntries]
 }

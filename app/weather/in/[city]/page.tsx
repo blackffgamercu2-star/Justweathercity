@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${cityData.name} Weather Today | Live Temperature, Forecast & Air Quality`
   const description = `Get live weather for ${cityData.name}, ${cityData.state}. Current temperature, humidity, wind speed, air quality index, and accurate 7-day weather forecast. Updated every 15 minutes. Free weather app.`
-  const keywords = `${cityData.name} weather, ${cityData.name} weather today, ${cityData.name} temperature, weather in ${cityData.name}, ${cityData.name} forecast, ${cityData.name} weather forecast, ${cityData.name} air quality, ${cityData.name} humidity, ${cityData.name} wind speed, today weather ${cityData.name}`
+  const keywords = `${cityData.name} weather, ${cityData.name} weather today, ${cityData.name} temperature, weather in ${cityData.name}, ${cityData.name} forecast, ${cityData.name} weather forecast, ${cityData.name} air quality, ${cityData.name} humidity, ${cityData.name} wind speed, today weather ${cityData.name}, ${cityData.name} live weather, ${cityData.name} monsoon forecast, ${cityData.name} cyclone alert, ${cityData.name} heat wave, ${cityData.name} cold wave, ${cityData.name} UV index, ${cityData.name} dew point, ${cityData.name} real feel, ${cityData.name} weather radar, ${cityData.name} satellite weather, ${cityData.name} precipitation, ${cityData.name} thunderstorm, ${cityData.name} lightning alert, ${cityData.name} fog alert, ${cityData.name} hailstorm, ${cityData.name} dust storm, ${cityData.name} AQI, ${cityData.name} PM2.5, ${cityData.name} PM10, ${cityData.name} weather map, ${cityData.name} hourly forecast, ${cityData.name} 7 day forecast, ${cityData.name} 10 day forecast, ${cityData.name} weather widget, ${cityData.name} weather update, ${cityData.name} weather alert, ${cityData.name} severe weather, ${cityData.name} extreme weather, ${cityData.name} weather conditions, ${cityData.name} weather prediction, ${cityData.name} barometric pressure, ${cityData.name} wind direction, ${cityData.name} wind chill, ${cityData.name} heat index, ${cityData.name} visibility, ${cityData.name} cloud cover, ${cityData.name} sunrise sunset, ${cityData.state} weather, weather ${cityData.state}, ${cityData.name} natural disaster, ${cityData.name} storm alert, ${cityData.name} earthquake, ${cityData.name} flood warning, ${cityData.name} drought alert, ${cityData.name} weather emergency, ${cityData.name} disaster alert, ${cityData.name} weather hazard, ${cityData.name} climate data, ${cityData.name} weather trends, ${cityData.name} seasonal forecast, ${cityData.name} weather patterns, ${cityData.name} historical weather, ${cityData.name} weather comparison, ${cityData.name} weather safety, ${cityData.name} weather preparedness, ${cityData.name} disaster management, ${cityData.name} weather monitoring, ${cityData.name} weather tracking, ${cityData.name} weather surveillance, ${cityData.name} weather detection, ${cityData.name} weather warning, ${cityData.name} emergency alert, hyperlocal weather ${cityData.name}, real-time weather ${cityData.name}, accurate weather ${cityData.name}, free weather ${cityData.name}, weather data ${cityData.name}, weather API ${cityData.name}, weather station ${cityData.name}, weather sensor ${cityData.name}, weather observation ${cityData.name}, weather measurement ${cityData.name}, weather science ${cityData.name}, meteorology ${cityData.name}, atmospheric conditions ${cityData.name}`
 
   return {
     title,
@@ -168,8 +168,46 @@ export default async function CityWeatherPage({ params }: Props) {
                     text: `Check the forecast section below for detailed daily predictions including temperature, conditions, and precipitation probability.`,
                   },
                 },
+                {
+                  "@type": "Question",
+                  name: `Is there a cyclone or monsoon warning for ${weatherData.name}?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Check our weather alerts section for real-time cyclone, monsoon, and severe weather warnings for ${weatherData.name}.`,
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: `How accurate is the weather forecast for ${weatherData.name}?`,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: `Our weather data for ${weatherData.name} is updated every 15 minutes using advanced meteorological models for high accuracy.`,
+                  },
+                },
               ],
             },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Place",
+            name: weatherData.name,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: weatherData.name,
+              addressRegion: cityData.state,
+              addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: weatherData.lat,
+              longitude: weatherData.lon,
+            },
+            description: `Live weather information for ${weatherData.name}, ${cityData.state}. Get accurate temperature, humidity, wind speed, and air quality data.`,
           }),
         }}
       />

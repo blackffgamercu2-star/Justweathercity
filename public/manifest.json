@@ -1,0 +1,54 @@
+{
+  "name": "JustWeatherCity - Live Weather Forecast",
+  "short_name": "JustWeather",
+  "description": "Real-time weather forecasts for 1000+ Indian cities with accurate temperature, humidity, air quality, and 7-day predictions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Delhi Weather",
+      "short_name": "Delhi",
+      "description": "Check weather in Delhi",
+      "url": "/weather/in/delhi",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Mumbai Weather",
+      "short_name": "Mumbai",
+      "description": "Check weather in Mumbai",
+      "url": "/weather/in/mumbai",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Bangalore Weather",
+      "short_name": "Bangalore",
+      "description": "Check weather in Bangalore",
+      "url": "/weather/in/bangalore",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["weather", "utilities", "productivity"],
+  "screenshots": []
+}

@@ -80,6 +80,10 @@ export default function Home() {
             "Rain alert near me",
             "Air quality today",
             "7 day forecast",
+            "Monsoon forecast India",
+            "Cyclone alert today",
+            "Heat wave warning",
+            "UV index today",
           ].map((keyword) => (
             <Link
               key={keyword}
